@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Function to display each line of the opening crawl
+display_line() {
+    echo -e "$1"
+    sleep 0.1
+}
+
+# Clear the terminal screen
+clear
+
+# Display the opening crawl line by line
+display_line "A long time ago in a galaxy far, far away..."
+display_line "        ____        _        _      ____  __     __  _____  ____  "
+display_line "       |  _ \      / \      / \    /  _ \ \ \   / / |_   _|/ ___| "
+display_line "       | | | |    / _ \    / _ \  | | | | \ \ / /    | |  \___ \ "
+display_line "       | |_| |   / ___ \  / ___ \ | |_| |  \ V /     | |   ___) |"
+display_line "       |____/   /_/   \_\/_/   \_\ \____/    \_/      |_|  |____/ "
+display_line " "
+
+# Additional lines of the opening crawl
+display_line "It is a period of civil war."
+display_line "Rebel spaceships, striking"
+display_line "from a hidden base, have won"
+display_line "their first victory against"
+display_line "the evil Galactic Empire."
+display_line " "
+
+# Add more lines of the opening crawl here...
+
+# End with a clear screen
+clear
+
