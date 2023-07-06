@@ -1,2 +1,2 @@
 #!/bin/bash
-groups $(id -n -G)
+groups $(id -n -G) | tr ' ' '\n'
