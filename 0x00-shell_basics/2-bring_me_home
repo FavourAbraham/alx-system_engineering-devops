@@ -1,0 +1,2 @@
+#!/bin/bash
+home_directory=$(getent passwd "$USER" | cut -d ':' -f 6) cd "$home_directory"
