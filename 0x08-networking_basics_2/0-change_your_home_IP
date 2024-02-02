@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Check if the script is running inside Docker
+if [ -f "/.dockerenv" ]; then
+    echo "Running inside Docker. Proceeding with configuration..."
+else
+    echo "This script is intended to run inside Docker. Exiting..."
+    exit 1
+fi
+
+# Requirements
+localhost_ip="127.0.0.2"
+facebook_ip="8.8.8.8"
+
+# Add entries to /etc/hosts
+echo -e "$localhost_ip\tlocalhost" | sudo tee -a /etc/hosts > /dev/null
+echo -e "$facebook_ip\tfacebook.com" | sudo tee -a /etc/hosts > /dev/null
+
+# Display the updated /etc/hosts file
+echo -e "\nUpdated /etc/hosts file:"
+cat /etc/hosts

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Check if the ifconfig command is available
+if ! command -v ifconfig &> /dev/null; then
+    echo "ifconfig command not found. Exiting..."
+    exit 1
+fi
+
+# Get all active IPv4 addresses
+ipv4_addresses=$(ifconfig | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | grep -v "127.0.0.1")
+
+# Check if any IPv4 addresses are found
+if [ -z "$ipv4_addresses" ]; then
+    echo "No active IPv4 addresses found."
+else
+    echo "Active IPv4 addresses:"
+    echo "$ipv4_addresses"
+fi
